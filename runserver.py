@@ -49,7 +49,7 @@ if __name__ == '__main__':
     create_tables(db)
 
     locations = args.location.split('|')
-    positions = map(lambda location: get_pos_by_name(location), locations)
+    positions = map(get_pos_by_name, locations)
     if not positions:
         log.error('Could not get a position by name, aborting.')
         sys.exit()
